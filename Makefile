@@ -6,13 +6,13 @@
 #    By: simoncleerdin <simoncleerdin@student.co      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/08 14:37:12 by simoncleerd   #+#    #+#                  #
-#    Updated: 2022/02/09 16:03:28 by simoncleerd   ########   odam.nl          #
+#    Updated: 2022/02/09 17:14:50 by scleerdi      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-SOURCE = 
-SOURCE := $(SOURCE:%=ft_%.c)
+SOURCE = ft_printf ../main
+SOURCE := $(SOURCE:%=Source/%.c)
 OBJECT := $(SOURCE:%.c=%.o)
 
 all: $(NAME)

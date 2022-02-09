@@ -1,0 +1,9 @@
+c = single char
+s = string
+p = pointer in hex form
+d = base 10 number
+i = base 10 int
+u = unsigned base 10 int
+x = number in hex
+X = NUMBER IN HEX
+% = %
