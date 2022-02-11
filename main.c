@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 17:11:31 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/02/11 17:10:35 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/11 17:51:06 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int	main(void)
 {
-	int		x;
-	int		y;
-	void	*p;
+	int				x;
+	int				y;
+	unsigned int	a;
+	int				b;
+	void			*p;
 
+	a = 2147483647;
+	b = -2147483648;
+	p = (void *)sizeof(a);
 	// printf("|-----------------|\n");
 	// printf("|char tests|\n");
 	// printf("|-----------------|\n");
@@ -43,33 +48,33 @@ int	main(void)
 	printf("|-----------------|\n");
 	printf("|int & dec tests|\n");
 	printf("|-----------------|\n");
-	x = ft_printf("|int : |%i|\n", x);
-	y = printf("|int : |%i|\n", x);
+	x = ft_printf("|int : |%i|\n", b);
+	y = printf("|int : |%i|\n", b);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
-	x = ft_printf("|dec : |%d|\n", y);
-	y = printf("|dec : |%d|\n", y);
+	x = ft_printf("|dec : |%d|\n", b);
+	y = printf("|dec : |%d|\n", b);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
 	printf("|-----------------|\n");
 	printf("|uint tests|\n");
 	printf("|-----------------|\n");
-	x = ft_printf("|uint : |%u|\n", (unsigned int)x);
-	y = printf("|uint : |%u|\n", (unsigned int)x);
+	x = ft_printf("|uint : |%u|\n", a);
+	y = printf("|uint : |%u|\n", a);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
 	printf("|-----------------|\n");
 	printf("|hex & HEX tests|\n");
 	printf("|-----------------|\n");
-	x = ft_printf("|hex : |%x|\n", x);
-	y = printf("|hex : |%x|\n", x);
+	x = ft_printf("|hex : |%x|\n", a);
+	y = printf("|hex : |%x|\n", a);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
-	x = ft_printf("|HEX : |%X|\n", x);
-	y = printf("|HEX : |%X|\n", x);
+	x = ft_printf("|HEX : |%X|\n", a);
+	y = printf("|HEX : |%X|\n", a);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
-	// printf("|-----------------|\n");
-	// printf("|%% tests|\n");
-	// printf("|-----------------|\n");
-	// x = ft_printf("|%%%%|\n");
-	// y = printf("|%%%%|\n");
-	// printf("|mine = %d|\n|std = %d|\n", x, y);
+	printf("|-----------------|\n");
+	printf("|%% tests|\n");
+	printf("|-----------------|\n");
+	x = ft_printf("|%%%%|\n");
+	y = printf("|%%%%|\n");
+	printf("|mine = %d|\n|std = %d|\n", x, y);
 	printf("|-------done------|\n");
 	return (0);
 }
