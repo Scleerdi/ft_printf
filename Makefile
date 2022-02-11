@@ -6,7 +6,7 @@
 #    By: simoncleerdin <simoncleerdin@student.co      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/08 14:37:12 by simoncleerd   #+#    #+#                  #
-#    Updated: 2022/02/09 17:56:34 by scleerdi      ########   odam.nl          #
+#    Updated: 2022/02/11 15:07:03 by scleerdi      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ all: $(NAME)
 $(NAME): $(OBJECT)
 	@echo "Compiling libftprintf"
 	@make -C Libft/
+	@cp Libft/libft.a $(NAME)
 	@ar -rcs $(NAME) $(OBJECT)
 
 $(OBJECT): $(SOURCE)
