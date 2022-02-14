@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 17:11:31 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/02/11 17:51:06 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/14 17:00:16 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,35 @@ int	main(void)
 	int				b;
 	void			*p;
 
-	a = 2147483647;
-	b = -2147483648;
-	p = (void *)sizeof(a);
-	// printf("|-----------------|\n");
-	// printf("|char tests|\n");
-	// printf("|-----------------|\n");
-	// x = ft_printf("|char : |%c|\n", 'Y');
-	// y = printf("|char : |%c|\n", 'Y');
-	// printf("|mine = %d|\n|std = %d|\n", x, y);
-	// printf("|-----------------|\n");
-	// printf("|string tests|\n");
-	// printf("|-----------------|\n");
-	// x = ft_printf("|hello |%s|\n", "world");
-	// y = printf("|hello |%s|\n", "world");
-	// printf("|mine = %d|\n|std = %d|\n", x, y);
+	a = 1004;
+	b = -4001;
+	p = malloc(5);
+	printf("|-----------------|\n");
+	printf("|char tests|\n");
+	printf("|-----------------|\n");
+	x = ft_printf("|char : |%c|\n", 'Y');
+	y = printf("|char : |%c|\n", 'Y');
+	printf("|mine = %d|\n|std = %d|\n", x, y);
+	printf("|-----------------|\n");
+	printf("|string tests|\n");
+	printf("|-----------------|\n");
+	x = ft_printf("|hello |%s|\n", "world");
+	y = printf("|hello |%s|\n", "world");
+	printf("|mine = %d|\n|std = %d|\n", x, y);
 	printf("|-----------------|\n");
 	printf("|pointer tests|\n");
 	printf("|-----------------|\n");
 	x = ft_printf("|ptr : |%p|\n", p);
 	y = printf("|ptr : |%p|\n", p);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
-	p = malloc(5);
 	x = ft_printf("|ptr : |%p|\n", p);
 	y = printf("|ptr : |%p|\n", p);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
 	printf("|-----------------|\n");
 	printf("|int & dec tests|\n");
 	printf("|-----------------|\n");
-	x = ft_printf("|int : |%i|\n", b);
-	y = printf("|int : |%i|\n", b);
+	x = ft_printf("|int : |%i|\n", a);
+	y = printf("|int : |%i|\n", a);
 	printf("|mine = %d|\n|std = %d|\n", x, y);
 	x = ft_printf("|dec : |%d|\n", b);
 	y = printf("|dec : |%d|\n", b);
