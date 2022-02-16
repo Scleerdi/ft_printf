@@ -6,35 +6,47 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 16:39:40 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/14 16:46:34 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/16 15:43:45 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	handle_ptr(va_list args)
+int	check_flag(char f)
+{
+	if (f == 'c' || f == 's' || f == 'x' || f == 'X' \
+	|| f == 'p' || f == 'd' || f == 'i' || f == 'u')
+		return (1);
+	return (0);
+}
+
+char	*handle_ptr(va_list args)
 {
 	char	*ptr;
 	int		i;
 
 	i = 0;
 	ptr = ft_utoa_base((va_arg(args, size_t)), 16);
+	if (!ptr)
+		return (NULL);
 	ptr = ft_strjoin("0x", ptr);
 	while (ptr[i])
 	{
 		ptr[i] = ft_tolower(ptr[i]);
 		i++;
 	}
-	return (ft_putstr_fd(ptr, 0));
+	return (ptr);
 }
 
-int	handle_hex(va_list args, char f)
+char	*handle_hex(va_list args, char f)
 {
 	char	*s;
 	int		i;
 
 	i = 0;
 	s = ft_utoa_base(va_arg(args, size_t), 16);
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		if (f == 'X')
@@ -43,11 +55,14 @@ int	handle_hex(va_list args, char f)
 			s[i] = ft_tolower(s[i]);
 		i++;
 	}
-	return (write(0, s, ft_strlen(s)));
+	return (s);
 }
 
 int	get_arg(va_list args, char f)
 {
+	char	*str;
+	int		r;
+
 	if (f == 'c')
 		return (ft_putchar_fd((va_arg(args, int)), 0));
 	if (f == 's')
@@ -57,9 +72,15 @@ int	get_arg(va_list args, char f)
 	if (f == 'u')
 		return (ft_putuns_fd(va_arg(args, unsigned int), 0));
 	if (f == 'x' || f == 'X')
-		return (handle_hex(args, f));
+		str = handle_hex(args, f);
 	if (f == 'p')
-		return (handle_ptr(args));
+		str = handle_ptr(args);
+	if (str)
+	{
+		r = ft_putstr_fd(str, 0);
+		free(str);
+		return (r);
+	}
 	else
 		return (0);
 }
@@ -75,7 +96,7 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%' && check_flag(format[i + 1]))
 		{
 			print += get_arg(args, format[i + 1]);
 			i += 2;
