@@ -2,3 +2,7 @@ make re && gcc main.c libftprintf.a && ./a.out
 ft_putstr_fd((va_arg(args, char *)), 0);
 
 if (i < (int)ft_strlen(format))
+
+ft_printf("%s", 0)
+NULL vs (null)
+%%p
