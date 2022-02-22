@@ -6,13 +6,13 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 14:44:53 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/14 15:29:44 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/17 15:59:05 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "Libft/libft.h"
+# include "libft.h"
 # include <stdarg.h>
 # include <stdio.h> //remove
 

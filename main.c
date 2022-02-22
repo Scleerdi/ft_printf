@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 17:11:31 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/02/17 16:03:21 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/22 16:30:52 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(void)
 	printf("|mine = %d|\n|std = %d|\n", x, y);
 	printf("|-----------------|\n");
 	printf("|all tests|\n");
-	printf("|-----------------|\n");
+	//printf("|-----------------|\n");
 	x = ft_printf("|-----------------|\n - c : %c - \n - s : %s -\n \
 - x : %x - \n - X : %X - \n \
 - %% : %% - \n - p : %p - \n \
