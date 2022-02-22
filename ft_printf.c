@@ -6,7 +6,7 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 16:39:40 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/16 15:43:45 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/22 13:57:59 by simoncleerd   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int	ft_printf(const char *format, ...)
 			print += ft_putchar_fd('%', 0);
 			i++;
 		}
-		else
+		else if (i < ft_strlen(format))
 			print += ft_putchar_fd(format[i], 0);
 		i++;
 	}
