@@ -6,7 +6,7 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/08 14:44:53 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/17 15:59:05 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/22 16:40:44 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 # include "libft.h"
 # include <stdarg.h>
-# include <stdio.h> //remove
 
 int	ft_printf(const char *format, ...);
 
