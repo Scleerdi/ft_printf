@@ -6,7 +6,7 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 16:39:40 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/22 16:43:20 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/23 17:13:53 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int	check_flag(char f)
 {
 	if (f == 'c' || f == 's' || f == 'x' || f == 'X' \
-	|| f == 'p' || f == 'd' || f == 'i' || f == 'u')
+	|| f == 'p' || f == 'd' || f == 'i' || f == 'u' \
+	|| f == '%')
 		return (1);
 	return (0);
 }
@@ -63,26 +64,27 @@ int	get_arg(va_list args, char f)
 	char	*str;
 	int		r;
 
+	if (f == '%')
+		return (ft_putchar_fd('%', 1));
 	if (f == 'c')
-		return (ft_putchar_fd((va_arg(args, int)), 0));
+		return (ft_putchar_fd((va_arg(args, int)), 1));
 	if (f == 's')
-		return (ft_putstr_fd((va_arg(args, char *)), 0));
+		return (ft_putstr_fd((va_arg(args, char *)), 1));
 	if (f == 'i' || f == 'd')
-		return (ft_putstr_fd(ft_itoa((va_arg(args, int))), 0));
+		str = ft_itoa((va_arg(args, int)));
 	if (f == 'u')
-		return (ft_putuns_fd(va_arg(args, unsigned int), 0));
+		str = ft_utoa_base((va_arg(args, unsigned int)), 10);
 	if (f == 'x' || f == 'X')
 		str = handle_hex(args, f);
 	if (f == 'p')
 		str = handle_ptr(args);
-	if (str)
+	if (str != NULL)
 	{
-		r = ft_putstr_fd(str, 0);
+		r = ft_putstr_fd(str, 1);
 		free(str);
 		return (r);
 	}
-	else
-		return (0);
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -101,14 +103,11 @@ int	ft_printf(const char *format, ...)
 			print += get_arg(args, format[i + 1]);
 			i += 2;
 		}
-		if (format[i] == '%' && format[i + 1] == '%')
+		else
 		{
-			print += ft_putchar_fd('%', 0);
+			print += ft_putchar_fd(format[i], 1);
 			i++;
 		}
-		else if (i < (int)ft_strlen(format))
-			print += ft_putchar_fd(format[i], 0);
-		i++;
 	}
 	va_end(args);
 	return (print);

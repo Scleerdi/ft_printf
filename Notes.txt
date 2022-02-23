@@ -6,3 +6,5 @@ if (i < (int)ft_strlen(format))
 ft_printf("%s", 0)
 NULL vs (null)
 %%p
+
+%c '0'
