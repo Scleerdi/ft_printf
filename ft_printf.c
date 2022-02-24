@@ -6,7 +6,7 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 16:39:40 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/23 17:13:53 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/24 16:19:06 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ char	*handle_ptr(va_list args)
 	ptr = ft_utoa_base((va_arg(args, size_t)), 16);
 	if (!ptr)
 		return (NULL);
+	if (ptr[0] == '0' && ptr != NULL)
+	{
+		free(ptr);
+		return (ft_strdup("0x0"));
+	}
 	ptr = ft_strjoin("0x", ptr);
 	while (ptr[i])
 	{
