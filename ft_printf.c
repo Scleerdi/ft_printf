@@ -6,7 +6,7 @@
 /*   By: simoncleerdin <simoncleerdin@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/09 16:39:40 by simoncleerd   #+#    #+#                 */
-/*   Updated: 2022/02/24 16:19:06 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/25 16:18:26 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*handle_hex(va_list args, char f)
 	int		i;
 
 	i = 0;
-	s = ft_utoa_base(va_arg(args, size_t), 16);
+	s = ft_utoa_base(va_arg(args, unsigned int), 16);
 	if (!s)
 		return (NULL);
 	while (s[i])

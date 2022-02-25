@@ -6,7 +6,7 @@
 #    By: simoncleerdin <simoncleerdin@student.co      +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/08 14:37:12 by simoncleerd   #+#    #+#                  #
-#    Updated: 2022/02/11 15:07:03 by scleerdi      ########   odam.nl          #
+#    Updated: 2022/02/25 13:00:50 by scleerdi      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ $(NAME): $(OBJECT)
 	@ar -rcs $(NAME) $(OBJECT)
 
 $(OBJECT): $(SOURCE)
-	@gcc -Wall -Werror -Wextra -c $(SOURCE)
+	@gcc -Wall -Werror -Wextra -c $(SOURCE) -g
 
 clean:
 	@-rm -f $(OBJECT)

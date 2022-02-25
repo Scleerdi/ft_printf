@@ -6,7 +6,7 @@
 /*   By: scleerdi <scleerdi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/23 14:00:55 by scleerdi      #+#    #+#                 */
-/*   Updated: 2022/02/24 16:30:36 by scleerdi      ########   odam.nl         */
+/*   Updated: 2022/02/25 13:26:46 by scleerdi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,25 @@ int	main(void)
 	// y = printf("|uint : |%u|\n", a);
 	// printf("|mine = %d|\n|std = %d|\n", x, y);
 	// printf("|-----------------|\n");
-	// printf("|hex & HEX tests|\n");
-	// printf("|-----------------|\n");
-	// x = ft_printf("|hex : |%x|\n", 9223372036854775807LL);
-	// y = printf("|hex : |%x|\n", 9223372036854775807LL);
-	// printf("|mine = %d|\n|std = %d|\n", x, y);
-	// x = ft_printf("|HEX : |%X|\n",a);
-	// y = printf("|HEX : |%X|\n", a);
-	// printf("|mine = %d|\n|std = %d|\n", x, y);
-	// printf("|-----------------|\n");
+	printf("|hex & HEX tests|\n");
+	printf("|-----------------|\n");
+	x = ft_printf("|hex : |%x|\n", 'C');
+	y = printf("|hex : |%x|\n", 'C');
+	printf("|mine = %d|\n|std = %d|\n", x, y);
+	x = ft_printf("|HEX : |%X|\n", -42);
+	y = printf("|HEX : |%X|\n", -42);
+	printf("|mine = %d|\n|std = %d|\n", x, y);
+	printf("|-----------------|\n");
 	// printf("|%% tests|\n");
 	// printf("|-----------------|\n");
 	// x = ft_printf("|%%%%|\n");
 	// y = printf("|%%%%|\n");
 	// printf("|mine = %d|\n|std = %d|\n", x, y);
 	// printf("|-----------------|\n");
-	printf("|all tests|\n");
-	x = ft_printf("|-----------------|\n %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
-	y = printf("|-----------------|\n %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
-	printf("\n|mine = %d|\n|std = %d|\n", x, y);
+	//printf("|all tests|\n");
+	//x = ft_printf("\n|-----------------|\n %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	//y = printf("\n|-----------------|\n %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%%%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	//printf("\n|mine = %d|\n|std = %d|\n", x, y);
 	//free(p);
 	printf("|-------done------|\n");
 	// while (1)
